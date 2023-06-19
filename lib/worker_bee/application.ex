@@ -6,9 +6,10 @@ defmodule WorkerBee.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {Bandit, plug: WorkerBee.Router},
-      {Registry, [keys: :duplicate, name: Registry.WorkerBee]},
-      {Phoenix.PubSub, name: :workerbee_pubsub}
+      # {Bandit, plug: WorkerBee.Router},
+      {WorkerBee.DriverSupervisor, []},
+      {Registry, [keys: :unique, name: WorkerBee.Registry]}
+      # {Phoenix.PubSub, name: :workerbee_pubsub}
     ]
 
     opts = [strategy: :one_for_one, name: WorkerBee.Supervisor]
