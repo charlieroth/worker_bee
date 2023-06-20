@@ -1,4 +1,4 @@
-defmodule WebSockEx.DriverServer do
+defmodule WebSockEx.Driver.Server do
   @moduledoc false
   alias Phoenix.PubSub
   require Logger

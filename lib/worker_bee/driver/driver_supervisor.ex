@@ -1,4 +1,4 @@
-defmodule WorkerBee.DriverSupervisor do
+defmodule WorkerBee.Driver.Supervisor do
   use DynamicSupervisor
   alias WorkerBee.Driver
 
@@ -6,7 +6,7 @@ defmodule WorkerBee.DriverSupervisor do
     DynamicSupervisor.start_link(__MODULE__, [], name: __MODULE__)
   end
 
-  def start_child(driver_id) do
+  def add_driver(driver_id) do
     child_spec = {Driver, driver_id}
     DynamicSupervisor.start_child(__MODULE__, child_spec)
   end

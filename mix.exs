@@ -23,7 +23,8 @@ defmodule WorkerBee.MixProject do
       {:bandit, "~> 0.7.7"},
       {:websock_adapter, "~> 0.5.3"},
       {:jason, "~> 1.4"},
-      {:phoenix_pubsub, "~> 2.1"}
+      {:phoenix_pubsub, "~> 2.1"},
+      {:uniq, "~> 0.5.4"}
     ]
   end
 end
